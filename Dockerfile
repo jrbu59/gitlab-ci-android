@@ -1,16 +1,15 @@
 #
 # GitLab CI: Android v0.2
 #
-# https://hub.docker.com/r/jangrewe/gitlab-ci-android/
-# https://git.faked.org/jan/gitlab-ci-android
+# https://hub.docker.com/r/jrbu59/gitlab-ci-android
 #
 
-FROM ubuntu:16.04
-MAINTAINER Jan Grewe <jan@faked.org>
+FROM ubuntu:14.04
+MAINTAINER jiarui <jiarui@ymt360.com>
 
-ENV VERSION_SDK_TOOLS "25.2.2"
-ENV VERSION_BUILD_TOOLS "24.0.3"
-ENV VERSION_TARGET_SDK "24"
+ENV VERSION_SDK_TOOLS "22.2.0"
+ENV VERSION_BUILD_TOOLS "22.0.1"
+ENV VERSION_TARGET_SDK "19"
 
 ENV SDK_PACKAGES "build-tools-${VERSION_BUILD_TOOLS},android-${VERSION_TARGET_SDK},addon-google_apis-google-${VERSION_TARGET_SDK},platform-tools,extra-android-m2repository,extra-android-support,extra-google-google_play_services,extra-google-m2repository"
 
