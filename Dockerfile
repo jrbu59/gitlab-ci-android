@@ -4,7 +4,7 @@
 # https://hub.docker.com/r/jrbu59/gitlab-ci-android
 #
 
-FROM ubuntu:14.04
+FROM ubuntu:16.04
 MAINTAINER jiarui <jiarui@ymt360.com>
 
 ENV VERSION_SDK_TOOLS "22.2.0"
