@@ -17,6 +17,8 @@ ENV ANDROID_HOME "/sdk"
 ENV PATH "$PATH:${ANDROID_HOME}/tools"
 ENV DEBIAN_FRONTEND noninteractive
 
+ENV JAVA_TOOL_OPTIONS -Dfile.encoding=UTF8 
+
 RUN apt-get -qq update && \
     apt-get install -qqy --no-install-recommends \
       curl \
