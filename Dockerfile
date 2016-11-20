@@ -44,3 +44,13 @@ RUN mkdir -p $ANDROID_HOME/licenses/ \
   && echo "84831b9409646a918e30573bab4c9c91346d8abd" > $ANDROID_HOME/licenses/android-sdk-preview-license
 
 RUN (while [ 1 ]; do sleep 5; echo y; done) | ${ANDROID_HOME}/tools/android update sdk -u -a -t ${SDK_PACKAGES}
+
+ENV GRADLE_VERSION 2.1
+ENV SDK_HOME /usr/local
+ENV GRADLE_SDK_URL https://services.gradle.org/distributions/gradle-${GRADLE_VERSION}-bin.zip
+
+RUN curl -L "${GRADLE_SDK_URL}" -o gradle-${GRADLE_VERSION}-bin.zip  \
+    && unzip gradle-${GRADLE_VERSION}-bin.zip -d ${SDK_HOME}  \
+    && rm -rf gradle-${GRADLE_VERSION}-bin.zip
+ENV GRADLE_HOME ${SDK_HOME}/gradle-${GRADLE_VERSION}
+ENV PATH ${GRADLE_HOME}/bin:$PATH
