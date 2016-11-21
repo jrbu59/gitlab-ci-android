@@ -45,7 +45,7 @@ RUN mkdir -p $ANDROID_HOME/licenses/ \
 
 RUN (while [ 1 ]; do sleep 5; echo y; done) | ${ANDROID_HOME}/tools/android update sdk -u -a -t ${SDK_PACKAGES}
 
-ENV GRADLE_VERSION 2.1
+ENV GRADLE_VERSION 2.10
 ENV SDK_HOME /usr/local
 ENV GRADLE_SDK_URL https://services.gradle.org/distributions/gradle-${GRADLE_VERSION}-bin.zip
 
