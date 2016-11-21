@@ -13,7 +13,8 @@ ENV VERSION_TARGET_SDK "22"
 
 ENV SDK_PACKAGES "build-tools-${VERSION_BUILD_TOOLS},android-${VERSION_TARGET_SDK},addon-google_apis-google-${VERSION_TARGET_SDK},platform-tools,extra-android-m2repository,extra-android-support,extra-google-google_play_services,extra-google-m2repository"
 
-ENV ANDROID_HOME "/sdk"
+ENV SDK_HOME /usr/local
+ENV ANDROID_HOME "${SDK_HOME}/android_sdk"
 ENV PATH "$PATH:${ANDROID_HOME}/tools"
 ENV DEBIAN_FRONTEND noninteractive
 
@@ -46,7 +47,6 @@ RUN mkdir -p $ANDROID_HOME/licenses/ \
 RUN (while [ 1 ]; do sleep 5; echo y; done) | ${ANDROID_HOME}/tools/android update sdk -u -a -t ${SDK_PACKAGES}
 
 ENV GRADLE_VERSION 2.10
-ENV SDK_HOME /usr/local
 ENV GRADLE_SDK_URL https://services.gradle.org/distributions/gradle-${GRADLE_VERSION}-bin.zip
 
 RUN curl -L "${GRADLE_SDK_URL}" -o gradle-${GRADLE_VERSION}-bin.zip  \
